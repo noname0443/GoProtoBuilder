@@ -1,7 +1,10 @@
-The main goal of the GoProtoBuilder project is to provide a ready-made image that will allow generation.go code .proto schemes without the need to install additional packages or programs.
+The GoProtoBuilder project's primary objective is to offer a ready-made image that enables the generation of.go code with.proto schemes without the need of extra package installations.
 
 It can be used like this:
-1. As a builder, i.e. generate .go code from .proto schemas, compile the application and run it in a separate container without unnecessary libraries.
+1. As a builder, i.e.
+  - generate .go code from .proto schemas
+  - compile the application
+  - run it in a separate container without unnecessary libraries.
 ```Dockerfile
 FROM noname0443/go_proto_builder:latest AS builder
 
