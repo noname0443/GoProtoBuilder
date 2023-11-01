@@ -1,5 +1,7 @@
 FROM golang:1.21.3-alpine3.18
 
+WORKDIR /tmp
+
 RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-linux-x86_64.zip && \
     unzip protoc-24.4-linux-x86_64.zip -d ./protoc && \
     mv ./protoc/bin/protoc /usr/local/bin/ && \
@@ -11,4 +13,6 @@ RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v24.4/pro
 	wget https://github.com/googleapis/googleapis/archive/refs/heads/master.zip && \
 	unzip master.zip -d ./googleapis-master && \
 	mkdir /usr/lib/google && \
-	mv ./googleapis-master/googleapis-master/google/ /usr/lib/
+	mv ./googleapis-master/googleapis-master/google/ /usr/lib/ && \
+	mv ./protoc/include/google/* /usr/lib/google/ && \
+	rm -rf /tmp/*
