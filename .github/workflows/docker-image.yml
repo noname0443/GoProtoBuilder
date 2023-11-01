@@ -25,4 +25,4 @@ jobs:
           context: .
           push: true
           target: production
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/go_proto_builder:latest
