@@ -7,4 +7,8 @@ RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v24.4/pro
     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2 && \
     go install github.com/srikrsna/protoc-gen-gotag@latest && \
 	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest && \
-	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
+	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest && \
+	wget https://github.com/googleapis/googleapis/archive/refs/heads/master.zip && \
+	unzip master.zip -d ./googleapis-master && \
+	mkdir /usr/lib/google && \
+	mv ./googleapis-master/googleapis-master/google/ /usr/lib/
